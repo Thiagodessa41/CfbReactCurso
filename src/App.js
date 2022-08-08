@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import Car from './components/Car';
+import React from 'react';
+
 
 
 export default function App() {
-  // Declarar uma nova variável de state, na qual chamaremos de "count"
-  const [ligado, setLigado] = useState(false);
+
+  const carros = ['HRV','GOLF','FOCUS','CRUZE','ARGO']
+    const listaCarro=carros.map(
+      (c,i)=>
+      <li key={i}>{i}-{c}</li>
+    )
 
   return (
     <>
-      <Car ligado={ligado} setLigado={setLigado}/>
-      <a>
-        CFB Cursos
-      </a>
+      <ul>{listaCarro}</ul>
     </>
   );
 }
